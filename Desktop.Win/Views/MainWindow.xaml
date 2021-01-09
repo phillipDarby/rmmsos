@@ -11,7 +11,7 @@
         ResizeMode="NoResize"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Closing="Window_Closing"
-        Loaded="Window_Loaded" Icon="/Assets/Remotely_Icon.png">
+        Loaded="Window_Loaded" Icon="/Views/rmmsos_icon.png">
     <Window.Resources>
         <DrawingBrush x:Key="GearBrush">
             <DrawingBrush.Drawing>
@@ -35,7 +35,7 @@
             <Border Height="50" Background="#FF464646">
                 <DockPanel Margin="10,0,0,0">
                     <StackPanel>
-                        <TextBlock Foreground="DeepSkyBlue" FontWeight="Bold" FontSize="20" Margin="0,2,0,0">Remotely</TextBlock>
+                        <TextBlock Foreground="DeepSkyBlue" FontWeight="Bold" FontSize="20" Margin="0,2,0,0">Rmmsos</TextBlock>
                         <TextBlock Foreground="White" FontSize="10"><Run Text="Do IT Remotely"/></TextBlock>
                     </StackPanel>
                     <Button Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" />

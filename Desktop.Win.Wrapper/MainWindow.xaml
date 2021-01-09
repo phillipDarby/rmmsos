@@ -16,7 +16,7 @@
             <Border Height="50" Background="#FF464646">
                 <DockPanel Margin="10,0,0,0">
                     <StackPanel>
-                        <TextBlock Foreground="DeepSkyBlue" FontWeight="Bold" FontSize="20" Margin="0,2,0,0">Remotely</TextBlock>
+                        <TextBlock Foreground="DeepSkyBlue" FontWeight="Bold" FontSize="20" Margin="0,2,0,0">Rmmsos</TextBlock>
                         <TextBlock Foreground="White" FontSize="10"><Run Text="Do IT Remotely"/></TextBlock>
                     </StackPanel>
                     <Button Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" />

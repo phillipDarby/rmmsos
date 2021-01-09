@@ -35,9 +35,9 @@
         <Border Height="50" Background="#FF464646">
             <DockPanel Margin="10,0,0,0">
                 <DockPanel>
-                    <Image Height="50" Width="50" Source="/Assets/Remotely_Icon.png" Margin="0,0,10,0"></Image>
+                    <Image Height="50" Width="50" Source="/Views/rmmsos_icon.png" Margin="0,0,10,0"></Image>
                     <TextBlock Foreground="#FF1D90F1" FontWeight="Bold" FontSize="20" VerticalAlignment="Center">
-                            Remotely Chat
+                            Rmmsos Chat
                     </TextBlock>
                 </DockPanel>
 

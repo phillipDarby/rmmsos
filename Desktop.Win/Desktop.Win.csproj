@@ -31,6 +31,7 @@
   <ItemGroup>
     <None Remove="Assets\favicon.ico" />
     <None Remove="Assets\Remotely_Icon.png" />
+    <None Remove="Views\rmmsos_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,6 +51,7 @@
   <ItemGroup>
     <Resource Include="Assets\favicon.ico" />
     <Resource Include="Assets\Remotely_Icon.png" />
+    <Resource Include="Views\rmmsos_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
