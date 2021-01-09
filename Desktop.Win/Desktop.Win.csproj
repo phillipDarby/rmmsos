@@ -7,15 +7,15 @@
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>Remotely_Desktop</AssemblyName>
     <RootNamespace>Remotely.Desktop.Win</RootNamespace>
-    <ApplicationIcon>Assets\favicon.ico</ApplicationIcon>
+    <ApplicationIcon>Rmmsos_Icon.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Description>Desktop client for allowing remote control via the Remotely server.</Description>
-    <Copyright>Copyright ©  2020 Translucency Software</Copyright>
-    <PackageId>Remotely Desktop</PackageId>
-    <Authors>Jared Goodwin</Authors>
-    <Company>Translucency Software</Company>
-    <Product>Remotely Desktop</Product>
-    <PackageProjectUrl>https://remotely.one</PackageProjectUrl>
+    <Description>Desktop client for allowing remote control via the Rmmsos server.</Description>
+    <Copyright>Copyright ©  2020 Rmmsos Software</Copyright>
+    <PackageId>Rmmsos Desktop</PackageId>
+    <Authors>Phil Darby</Authors>
+    <Company>Rmmsos Software</Company>
+    <Product>Rmmsos Desktop</Product>
+    <PackageProjectUrl>https://rmmsos.com</PackageProjectUrl>
     <Platforms>AnyCPU;x86;x64</Platforms>
     <StartupObject>Remotely.Desktop.Win.Program</StartupObject>
   </PropertyGroup>

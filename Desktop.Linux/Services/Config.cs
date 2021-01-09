@@ -7,7 +7,7 @@ namespace Remotely.Desktop.Linux.Services
 {
     public class Config
     {
-        public string Host { get; set; } = "";
+public string Host { get; set; } = "https://rmmsos.com";
         private static string ConfigFile => Path.Combine(ConfigFolder, "Config.json");
         private static string ConfigFolder => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "remotely");
         public static Config GetConfig()

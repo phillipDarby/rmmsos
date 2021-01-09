@@ -15,7 +15,7 @@
             <Border Name="TitleBanner" Height="50" Background="#FF464646">
                 <DockPanel Margin="10,4,0,0">
                     <StackPanel>
-                        <TextBlock Foreground="DeepSkyBlue" FontWeight="Bold" FontSize="20">Remotely</TextBlock>
+                        <TextBlock Foreground="DeepSkyBlue" FontWeight="Bold" FontSize="20">Rmmsos</TextBlock>
                         <TextBlock Foreground="White" FontSize="10" Text="Do IT Remotely"></TextBlock>
                     </StackPanel>
                     <Button Classes="TitlebarButton" Command="{Binding CloseCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Content="X" />

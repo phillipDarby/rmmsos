@@ -17,12 +17,12 @@ done
 if [ -z "$AppRoot" ]; then
     read -p "Enter path where the Remotely server files should be installed (typically /var/www/remotely): " AppRoot
     if [ -z "$AppRoot" ]; then
-        AppRoot="/var/www/remotely"
+        AppRoot="/var/www/rmmsos"
     fi
 fi
 
 if [ -z "$HostName" ]; then
-    read -p "Enter server host (e.g. remotely.yourdomainname.com): " HostName
+    read -p "Enter server host (e.g. rmmsos.com): " HostName
 fi
 
 UbuntuVersion=$(lsb_release -r -s)
@@ -136,7 +136,7 @@ nginx -s reload
 # Create service.
 
 serviceConfig="[Unit]
-Description=Remotely Server
+Description=Rmmsos Server
 
 [Service]
 WorkingDirectory=$AppRoot
@@ -144,7 +144,7 @@ ExecStart=/usr/bin/dotnet $AppRoot/Remotely_Server.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
-SyslogIdentifier=remotely
+SyslogIdentifier=rmmsos
 User=www-data
 Environment=ASPNETCORE_ENVIRONMENT=Production
 Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
@@ -152,13 +152,13 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 [Install]
 WantedBy=multi-user.target"
 
-echo "$serviceConfig" > /etc/systemd/system/remotely.service
+echo "$serviceConfig" > /etc/systemd/system/rmmsos.service
 
 
 # Enable service.
-systemctl enable remotely.service
+systemctl enable rmmsos.service
 # Start service.
-systemctl restart remotely.service
+systemctl restart rmmsos.service
 
 
 # Install Certbot and get SSL cert.

@@ -9,7 +9,7 @@
     <FileVersion>1.0.0.0</FileVersion>
     <Platforms>AnyCPU;x86;x64</Platforms>
     <RootNamespace>Remotely.Server</RootNamespace>
-    <AssemblyName>Remotely_Server</AssemblyName>
+    <AssemblyName>Remotely_server</AssemblyName>
     <UserSecretsId>36e32491-91a5-42e6-a466-819233f0c593</UserSecretsId>
     <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
   </PropertyGroup>
