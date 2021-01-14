@@ -138,6 +138,8 @@ jobs:
     # Store the assembly version in an environment variable
     - name: Set current version
       shell: powershell
+      env:
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       run: |
         $VersionString = git show -s --format=%ci
         $VersionDate = [DateTimeOffset]::Parse($VersionString)
