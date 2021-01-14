@@ -169,7 +169,12 @@ jobs:
 
     # Remove the pfx
     - name: Remove the pfx
-      run: Remove-Item -path "$env:GITHUB_WORKSPACE\GitHubActionsWorkflow.pfx"
+      run: |
+       if (!($env:GITHUB_WORKSPACE\GitHubActionsWorkflow.pfx)) {
+          echo "Skipping removal of pfx because it is missing."
+          return
+        }
+       Remove-Item -path "$env:GITHUB_WORKSPACE\GitHubActionsWorkflow.pfx"
 
   deploy:
     runs-on: ubuntu-latest
