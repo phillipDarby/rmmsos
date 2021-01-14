@@ -189,13 +189,13 @@ private string serverUrl = "https://rmmsos.com";
             IsServiceInstalled = ServiceController.GetServices().Any(x => x.ServiceName == "Remotely_Service");
             if (IsServiceMissing)
             {
-                HeaderMessage = "Install the Remotely service.";
-                StatusMessage = "Installing the Remotely service will allow remote access by the above service provider.";
+                HeaderMessage = "Install the Rmmsos service.";
+                StatusMessage = "Installing the Rmmsos service will allow remote access by the above service provider.";
             }
             else
             {
-                HeaderMessage = "Modify the Remotely installation.";
-                StatusMessage = "Uninstalling the Remotely service will remove all remote acess to this device.\r\n\r\n" +
+                HeaderMessage = "Modify the Rmmsos installation.";
+                StatusMessage = "Uninstalling the Rmmsos service will remove all remote acess to this device.\r\n\r\n" +
                     "Reinstalling will retain the current settings and install the service again.";
             }
 
@@ -348,14 +348,14 @@ private string serverUrl = "https://rmmsos.com";
                     return;
                 }
 
-                HeaderMessage = "Installing Remotely...";
+                HeaderMessage = "Installing Rmmsos...";
 
                 if (await Installer.Install(ServerUrl, OrganizationID, DeviceGroup, DeviceAlias, DeviceUuid, CreateSupportShortcut))
                 {
                     IsServiceInstalled = true;
                     Progress = 0;
                     HeaderMessage = "Installation completed.";
-                    StatusMessage = "Remotely has been installed.  You can now close this window.";
+                    StatusMessage = "Rmmsos has been installed.  You can now close this window.";
                 }
                 else
                 {
@@ -384,14 +384,14 @@ private string serverUrl = "https://rmmsos.com";
             {
                 IsReadyState = false;
 
-                HeaderMessage = "Uninstalling Remotely...";
+                HeaderMessage = "Uninstalling Rmmsos...";
 
                 if (await Installer.Uninstall())
                 {
                     IsServiceInstalled = false;
                     Progress = 0;
                     HeaderMessage = "Uninstall completed.";
-                    StatusMessage = "Remotely has been uninstalled.  You can now close this window.";
+                    StatusMessage = "Rmmsos has been uninstalled.  You can now close this window.";
                 }
                 else
                 {

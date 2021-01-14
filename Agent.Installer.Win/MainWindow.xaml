@@ -12,7 +12,7 @@
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen"
-        Title="Remotely Installer" Height="325" Width="500"  Icon="Assets/favicon.ico">
+        Title="Remotely Installer" Height="325" Width="500"  Icon="favicon.ico">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
