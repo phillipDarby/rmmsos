@@ -22,7 +22,25 @@
          </div>
          <div id="collapse_@item.ID " class="collapse show" aria-labelledby="@item.ID " data-parent="#myAccordion">
             <div class="card-body">
-               <p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+               <table class="table table-sm">
+                  <thead>
+                     <tr>
+                        <th scope="col">Process ID</th>
+                        <th scope="col">Process Name</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     @foreach (var p in item.Processes)
+                     {
+                        <tr>
+                           <th scope="row">@p.ID </th>
+                           <td>@p.Name </td>
+                        </tr>
+                     }
+
+
+                  </tbody>
+               </table>
             </div>
          </div>
       </div>
