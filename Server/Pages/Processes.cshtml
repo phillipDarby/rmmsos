@@ -15,12 +15,12 @@
    @foreach (var item in devices.Where(d => d.IsOnline))
    {
       <div class="card">
-         <div class="card-header" id=@item.ID>
+         <div class="card-header" id="@item.ID ">
             <h2 class="mb-0">
                <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapse_@item.ID ">@item.DeviceName </button>
             </h2>
          </div>
-         <div id="collapse_@item.ID " class="collapse" aria-labelledby=@item.ID data-parent="#myAccordion">
+         <div id="collapse_@item.ID " class="collapse" aria-labelledby="@item.ID " data-parent="#myAccordion">
             <div class="card-body">
                <p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
             </div>
