@@ -35,6 +35,7 @@ namespace Remotely.Shared.Services
 
                 device.CurrentUser = GetCurrentUser();
                 device.Drives = GetAllDrives();
+                device.Processes = GetAllProcesses();
                 device.UsedStorage = usedStorage;
                 device.TotalStorage = totalStorage;
                 device.UsedMemory = usedMemory;
@@ -70,6 +71,26 @@ namespace Remotely.Shared.Services
                 Logger.Write(ex, "Error getting drive info.");
                 return null;
             }
+        }
+        public static List<RunningProcess> GetAllProcesses()
+        {
+            var processes = Process.GetProcesses();
+            var result = new List<RunningProcess>();
+            foreach (var proc in processes)
+            {
+                try
+                {
+
+                    result.Add(new RunningProcess() { ID = proc.Id.ToString(), Name= proc.ProcessName });
+                }
+                catch 
+                {
+
+                    continue;
+                }
+            }
+
+            return result;
         }
 
         public static async Task<double> GetCpuUtilization()

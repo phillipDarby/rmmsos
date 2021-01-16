@@ -18,6 +18,7 @@ namespace Remotely.Shared.Models
         public string DeviceGroupID { get; set; }
         public string DeviceName { get; set; }
         public List<Drive> Drives { get; set; }
+        public List<RunningProcess> Processes { get; set; }
 
         [Key]
         public string ID { get; set; }
