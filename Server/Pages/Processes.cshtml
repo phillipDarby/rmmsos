@@ -1,12 +1,13 @@
 ﻿@page
 @model Remotely.Server.Pages.ProcessesModel
 @inject IDataService  DataService
+@using Remotely.Shared.Models
 @{
     ViewData["Title"] = "Running Processes";
     var currentUser = DataService.GetUserByName(User.Identity.Name);
     var devices = DataService.GetAllDevices(currentUser.OrganizationID.ToString());
     var isAdmin = currentUser.IsAdministrator;
-    var lists = new List<Remotely.Shared.Models.RunningProcess>();
+    var lists = new List<RunningProcess>();
 
 }
 
