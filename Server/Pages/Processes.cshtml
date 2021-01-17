@@ -28,13 +28,18 @@
                      </tr>
                   </thead>
                   <tbody>
-                     @foreach (var p in item.Processes)
+                     @if (item.Processes.Count > 0)
                      {
-                        <tr>
-                           <td>@p.ID </td>
-                           <td>@p.Name </td>
-                        </tr>
+                        @foreach (var p in item.Processes)
+                        {
+                           <tr>
+                              <td>@p.ID </td>
+                              <td>@p.Name </td>
+                           </tr>
+                        }
                      }
+
+
 
 
                   </tbody>
