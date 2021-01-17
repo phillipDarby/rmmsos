@@ -2,10 +2,11 @@
 @model Remotely.Server.Pages.ProcessesModel
 @inject IDataService  DataService
 @{
-   ViewData["Title"] = "Running Processes";
-   var currentUser = DataService.GetUserByName(User.Identity.Name);
-   var devices = DataService.GetAllDevices(currentUser.OrganizationID.ToString());
-   var isAdmin = currentUser.IsAdministrator;
+    ViewData["Title"] = "Running Processes";
+    var currentUser = DataService.GetUserByName(User.Identity.Name);
+    var devices = DataService.GetAllDevices(currentUser.OrganizationID.ToString());
+    var isAdmin = currentUser.IsAdministrator;
+    var lists = new List<Remotely.Shared.Models.RunningProcess>();
 
 }
 
@@ -13,14 +14,14 @@
 
 @foreach (var item in devices.Where(d => d.IsOnline))
 {
-
+   lists = item.Processes;
    <div class="card">
       <div class="card-header" id="@item.ID ">
          <h2 class="mb-0">
             @item.DeviceName
          </h2>
       </div>
-      @item.Processes[0].Name
+      @lists[0].Name
    </div>
 }
 
