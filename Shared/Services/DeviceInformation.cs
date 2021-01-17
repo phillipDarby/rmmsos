@@ -35,7 +35,7 @@ namespace Remotely.Shared.Services
 
                 device.CurrentUser = GetCurrentUser();
                 device.Drives = GetAllDrives();
-                device.Processes = GetAllProcesses();
+                device.Processes = await GetAllProcesses();
                 device.UsedStorage = usedStorage;
                 device.TotalStorage = totalStorage;
                 device.UsedMemory = usedMemory;
@@ -72,7 +72,7 @@ namespace Remotely.Shared.Services
                 return null;
             }
         }
-        public static List<RunningProcess> GetAllProcesses()
+        public static async Task<List<RunningProcess>> GetAllProcesses()
         {
             var processes = Process.GetProcesses();
             var result = new List<RunningProcess>();
@@ -89,7 +89,7 @@ namespace Remotely.Shared.Services
                     continue;
                 }
             }
-
+            await Task.Delay(500);
             return result;
         }
 
