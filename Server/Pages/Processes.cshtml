@@ -4,7 +4,7 @@
 @{
    ViewData["Title"] = "Running Processes";
    var currentUser = DataService.GetUserByName(User.Identity.Name);
-   var devices = DataService.GetAllDevices(currentUser.OrganizationID);
+   var devices = DataService.GetAllDevices(currentUser.OrganizationID.ToString());
    var isAdmin = currentUser.IsAdministrator;
 
 }
@@ -20,30 +20,7 @@
             @item.DeviceName
          </h2>
       </div>
-      <div class="card-body">
-         <table class="table table-sm">
-            <thead>
-               <tr>
-                  <th scope="col">Process ID</th>
-                  <th scope="col">Process Name</th>
-               </tr>
-            </thead>
-            <tbody>
-              
-                  
-                     <tr>
-                        <td>@item.Processes[0].ID </td>
-                        <td>@item.Processes[0].Name </td>
-                     </tr>
-                  
-               
-
-
-
-
-            </tbody>
-         </table>
-      </div>
+      
    </div>
 }
 
