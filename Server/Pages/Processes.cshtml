@@ -11,7 +11,6 @@
 
 <h4>@ViewData["Title"]</h4>
 
-<div class="accordion" id="myAccordion">
    @foreach (var item in devices.Where(d => d.IsOnline))
    {
       <div class="card">
@@ -20,7 +19,6 @@
                <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapse_@item.ID ">@item.DeviceName </button>
             </h2>
          </div>
-         <div id="collapse_@item.ID " class="collapse show" aria-labelledby="@item.ID " data-parent="#myAccordion">
             <div class="card-body">
                <table class="table table-sm">
                   <thead>
@@ -41,10 +39,8 @@
 
                   </tbody>
                </table>
-            </div>
          </div>
       </div>
       }
 
    
-</div>
