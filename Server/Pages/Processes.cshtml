@@ -2,50 +2,49 @@
 @model Remotely.Server.Pages.ProcessesModel
 @inject IDataService  DataService
 @{
-    ViewData["Title"] = "Running Processes";
-    var currentUser = DataService.GetUserByName(User.Identity.Name);
-    var devices = DataService.GetAllDevices(currentUser.OrganizationID);
-    var isAdmin = currentUser.IsAdministrator;
+   ViewData["Title"] = "Running Processes";
+   var currentUser = DataService.GetUserByName(User.Identity.Name);
+   var devices = DataService.GetAllDevices(currentUser.OrganizationID);
+   var isAdmin = currentUser.IsAdministrator;
 
 }
 
 <h4>@ViewData["Title"]</h4>
 
-   @foreach (var item in devices.Where(d => d.IsOnline))
-   {
-      <div class="card">
-         <div class="card-header" id="@item.ID ">
-            <h2 class="mb-0">
-               @item.DeviceName
-            </h2>
-         </div>
-            <div class="card-body">
-               <table class="table table-sm">
-                  <thead>
-                     <tr>
-                        <th scope="col">Process ID</th>
-                        <th scope="col">Process Name</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     @if (item.Processes.Count > 0)
-                     {
-                        @foreach (var p in item.Processes)
-                        {
-                           <tr>
-                              <td>@p.ID </td>
-                              <td>@p.Name </td>
-                           </tr>
-                        }
-                     }
+@foreach (var item in devices.Where(d => d.IsOnline))
+{
 
-
-
-
-                  </tbody>
-               </table>
-         </div>
+   <div class="card">
+      <div class="card-header" id="@item.ID ">
+         <h2 class="mb-0">
+            @item.DeviceName
+         </h2>
       </div>
-      }
+      <div class="card-body">
+         <table class="table table-sm">
+            <thead>
+               <tr>
+                  <th scope="col">Process ID</th>
+                  <th scope="col">Process Name</th>
+               </tr>
+            </thead>
+            <tbody>
+              
+                  
+                     <tr>
+                        <td>@item.Processes[0].ID </td>
+                        <td>@item.Processes[0].Name </td>
+                     </tr>
+                  
+               
 
-   
+
+
+
+            </tbody>
+         </table>
+      </div>
+   </div>
+}
+
+
