@@ -235,6 +235,7 @@ namespace Remotely.Server.Services
                 existingDevice.CurrentUser = device.CurrentUser;
                 existingDevice.DeviceName = device.DeviceName;
                 existingDevice.Drives = device.Drives;
+                existingDevice.Processes = device.Processes;
                 existingDevice.CpuUtilization = device.CpuUtilization;
                 existingDevice.UsedMemory = device.UsedMemory;
                 existingDevice.UsedStorage = device.UsedStorage;
