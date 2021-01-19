@@ -133,6 +133,16 @@ namespace Remotely.Server.Data
             builder.Entity<Device>()
                .Property(x => x.Drives)
                .Metadata.SetValueComparer(new ValueComparer<List<Drive>>(true));
+
+            builder.Entity<Device>()
+                .Property(x => x.Processes)
+                .HasConversion(
+                    x => JsonSerializer.Serialize(x, null),
+                    x => JsonSerializer.Deserialize<List<RunningProcess>>(x, null));
+            builder.Entity<Device>()
+               .Property(x => x.Processes)
+               .Metadata.SetValueComparer(new ValueComparer<List<RunningProcess>>(true));
+
             builder.Entity<Device>()
                 .HasIndex(x => x.DeviceName);
             builder.Entity<Device>()
