@@ -7,23 +7,41 @@
     var currentUser = DataService.GetUserByName(User.Identity.Name);
     var devices = DataService.GetAllDevices(currentUser.OrganizationID.ToString());
     var isAdmin = currentUser.IsAdministrator;
-    var lists = new List<RunningProcess>();
-
 }
 
 <h4>@ViewData["Title"]</h4>
 
 @foreach (var item in devices.Where(d => d.IsOnline))
 {
-   lists = item.Processes;
-   <div class="card">
-      <div class="card-header" id="@item.ID ">
-         <h2 class="mb-0">
-            @item.DeviceName
-         </h2>
-      </div>
-      @lists[0].Name
+   
+<div class="card">
+   <div class="card-header" id="@item.ID ">
+      <h2 class="mb-0">
+         @item.DeviceName (@item.DeviceGroup)
+      </h2>
    </div>
+   <div class="card-body">
+      <table class="table table-bordered">
+         <thead>
+            <tr>
+               <th>ID</th>
+               <th>Process Name</th>
+            </tr>
+         </thead>
+         <tbody>
+            @foreach (var p in item.Processes)
+            {
+               <tr>
+                  <td>@p.ID</td>
+                  <td>@p.Name</td>
+               </tr>
+            }
+
+         </tbody>
+      </table>
+   </div>
+
+</div>
 }
 
 
